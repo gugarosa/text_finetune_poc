@@ -18,12 +18,16 @@ class Session:
 
         """
 
+        print('Initializing session ...')
+
         # Connects to a MySQL server
         self.session = mysql.connector.connect(host=host, port=port, user=user, 
                                                password=password, database=database)
 
         # Defines a cursor
         self.cursor = self.session.cursor()
+
+        print('Session connected.')
 
     def close(self):
         """Closes the MySQL connection.
@@ -32,3 +36,5 @@ class Session:
 
         # Closes the session
         self.session.close()
+
+        print('Session closed.')
