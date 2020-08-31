@@ -1,2 +1,17 @@
-# textfier-api
-An API used to handle every resource available from textfier.
+# Roncarati Proof-Of-Concept
+
+Lorem ipsum
+
+## Installation
+
+### Starting MySQL with Docker
+
+### Recovering Database from Dump
+
+### Initializing a Python Environment
+
+## Getting Started
+
+## Environment Configuration
+
+## Support
