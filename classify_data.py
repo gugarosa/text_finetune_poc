@@ -5,8 +5,8 @@ from textfier.tasks import SequenceClassificationTask
 import utils.data as d
 
 # Loads training and testing samples
-Y_train, X_train = l.load_csv('data/train.csv')
-Y_test, X_test = l.load_csv('data/test.csv')
+X_train, Y_train = l.load_csv('data/train.csv')
+X_test, Y_test = l.load_csv('data/test.csv')
 
 # Creates labeled sentences from pre-loaded samples
 X_train_tok, Y_train_tok = d.create_labeled_sentences(X_train, Y_train)
