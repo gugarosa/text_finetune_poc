@@ -1,1 +1,2 @@
+git+https://github.com/gugarosa/textfier
 mysql-connector-python>=8.0.21

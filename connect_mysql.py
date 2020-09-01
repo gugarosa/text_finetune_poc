@@ -1,4 +1,4 @@
-from utils.database import Session
+from utils.mysql import Session
 
 # Creates a MySQL session
 db = Session()

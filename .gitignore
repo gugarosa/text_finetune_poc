@@ -1,3 +1,7 @@
+# Textfier
+logs/
+results/
+
 # Data files
 *.csv
 

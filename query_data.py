@@ -1,7 +1,7 @@
 import csv
 
 import utils.regex as r
-from utils.database import Session
+from utils.mysql import Session
 
 # Creates a MySQL session
 db = Session()
@@ -36,7 +36,7 @@ label = 0
 print('Dumping data ...')
 
 # Opens a .csv file
-with open('output.csv', 'w', newline='') as csv_file:
+with open('data/output.csv', 'w', newline='') as csv_file:
     # Defines a .csv writer
     writer = csv.writer(csv_file, delimiter=',', quoting=csv.QUOTE_MINIMAL)
 
