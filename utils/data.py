@@ -1,3 +1,5 @@
+import pandas as pd
+
 import textfier.stream.tokenizer as t
 
 
@@ -29,3 +31,36 @@ def create_labeled_sentences(X, Y, language='portuguese'):
         X_tok += x_tok
 
     return X_tok, Y_tok
+
+
+def load_csv(file_name, delimiter=','):
+    """Loads a .csv file using Pandas.
+
+    Args:
+        file_name (str): The file name to be loaded.
+
+    Returns:
+        Lists of samples and their labels.
+
+    """
+
+    print('Loading labels and samples from: %s ...', file_name)
+
+    # Tries to load the file
+    try:
+        # Loads a .csv file using Pandas
+        csv = pd.read_csv(file_name, delimiter=delimiter)
+
+        # Gathers the labels
+        labels = csv['label'].tolist()
+
+        # Gathers the samples
+        samples = csv['sample'].tolist()
+
+        print('Labels and samples loaded.')
+
+        return samples, labels
+
+    # If file can not be loaded
+    except FileNotFoundError:
+        raise

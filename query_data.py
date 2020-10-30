@@ -20,7 +20,7 @@ INNER JOIN qeztn_normas_assunto,
 WHERE qeztn_normas_assunto_norma.id_assunto = qeztn_normas_assunto.id
   AND qeztn_normas_norma.id = qeztn_normas_assunto_norma.id_norma
   AND qeztn_normas_norma.id_tipo_norma = qeztn_normas_tipo_norma.id
-ORDER BY assunto'''
+ORDER BY tipo_norma'''
 
 print('Executing query ...')
 
@@ -30,7 +30,7 @@ db.cursor.execute(query)
 print('Query executed.')
 
 # Defines an occurence for calculating the label and the label itself
-occurence = 'Aceitação da Proposta e Início de Vigência da Cobertura'
+occurence = 'ATO CNSP'
 label = 0
 
 print('Dumping data ...')
@@ -38,7 +38,7 @@ print('Dumping data ...')
 # Opens a .csv file
 with open('data/output.csv', 'w', newline='') as csv_file:
     # Defines a .csv writer
-    writer = csv.writer(csv_file, delimiter=',', quoting=csv.QUOTE_MINIMAL)
+    writer = csv.writer(csv_file, delimiter='\\', quoting=csv.QUOTE_MINIMAL)
 
     # Writes the header
     writer.writerow(['label', 'sample'])
@@ -46,13 +46,13 @@ with open('data/output.csv', 'w', newline='') as csv_file:
     # Iterates over the query results
     for i, row in enumerate(db.cursor):
         # Checks if the occurence is the same as ordered key
-        if occurence == row[0]:
+        if occurence == row[1]:
             pass
 
         # If not, it means that it belongs to a distinct class
         else:
             # Replaces the occurence with current one
-            occurence = row[0]
+            occurence = row[1]
 
             # Increments the label
             label += 1

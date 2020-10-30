@@ -1,19 +1,18 @@
-import textfier.utils.loader as l
 from textfier.core import Dataset, Runner
 from textfier.tasks import SequenceClassificationTask
 
 import utils.data as d
 
 # Loads training and testing samples
-X_train, Y_train = l.load_csv('data/train.csv')
-X_test, Y_test = l.load_csv('data/test.csv')
+X_train, Y_train = d.load_csv('data/train.csv', delimiter='\\')
+X_test, Y_test = d.load_csv('data/test.csv', delimiter='\\')
 
 # Creates labeled sentences from pre-loaded samples
 X_train_tok, Y_train_tok = d.create_labeled_sentences(X_train, Y_train)
 X_test_tok, Y_test_tok = d.create_labeled_sentences(X_test, Y_test)
 
 # Creates the sequence classification task with pre-trained model
-task = SequenceClassificationTask(model='neuralmind/bert-base-portuguese-cased', num_labels=2)
+task = SequenceClassificationTask(model='neuralmind/bert-large-portuguese-cased', num_labels=2)
 
 # Encodes the training and testing samples
 X_enc_train = task.tokenizer(X_train_tok, return_tensors='pt', padding=True, truncation=True)
@@ -26,7 +25,7 @@ test_dataset = Dataset(input_ids=X_enc_test['input_ids'],
                        attention_mask=X_enc_test['attention_mask'], labels=Y_test_tok)
 
 # Creates the runner with the pre-trained model and training dataset
-runner = Runner(task.model, train_dataset, num_train_epochs=3)
+runner = Runner(task.model, train_dataset, num_train_epochs=1)
 
 # Fine-tunes the runner
 runner.train()

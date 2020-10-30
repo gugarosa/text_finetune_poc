@@ -1,6 +1,7 @@
 # Textfier
 logs/
 results/
+*.log.*
 
 # Data files
 *.csv
