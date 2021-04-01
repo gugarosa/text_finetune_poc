@@ -9,7 +9,7 @@ services:
             - ./storage/db:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: roncarati
+            MYSQL_DATABASE: text_finetune_poc
             MYSQL_USER: localhost
             MYSQL_PASSWORD: root
         restart: always
