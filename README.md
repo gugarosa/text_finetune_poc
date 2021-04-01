@@ -67,7 +67,7 @@ Finally, we can now gather a pre-trained Transformer and fine-tune the architect
 python classify_data.txt
 ```
 
-*We are using [Textfier](https://github.com/gugarosa/textfier) as our engine, which is basically a wrapper around Huggingface's Transformers library.
+*We are using [Textfier](https://github.com/gugarosa/textfier) as our engine, which is basically a wrapper around Huggingface's Transformers library.*
 
 ---
 
