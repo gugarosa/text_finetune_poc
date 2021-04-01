@@ -6,7 +6,7 @@ class Session:
 
     """
 
-    def __init__(self, host='127.0.0.1', port=3306, user='localhost', password='root', database='roncarati'):
+    def __init__(self, host='127.0.0.1', port=3306, user='localhost', password='root', database='text_finetune_poc'):
         """Initialization method.
 
         Args:
