@@ -1,6 +1,6 @@
-# Proof-of-Concept with Roncarati
+# Text Fine-Tuning Proof-of-Concept
 
-*This repository holds all the necessary code to run the discontinued proof-of-concept from Roncarati. Note that data is private and will not be available.*
+*This repository holds all the necessary code to run the discontinued text fine-tuning proof-of-concept. Note that data is private and will not be available.*
 
 ---
 
