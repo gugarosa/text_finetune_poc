@@ -1,4 +1,4 @@
-# Text Fine-Tuning Proof-of-Concept
+# Text Fine-Tuning: A Proof-of-Concept using Transformers
 
 *This repository holds all the necessary code to run the discontinued text fine-tuning proof-of-concept. Note that data is private and will not be available.*
 
